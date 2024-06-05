@@ -4,15 +4,16 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuOverlay from "./MenuOverlay";
+import Image from "next/image";
 export default function Header() {
   const NavLinks = [
     {
       title: "About",
-      path: "#about",
+      path: "/#about",
     },
     {
       title: "Projects",
-      path: "#projects",
+      path: "/projects",
     },
     {
       title: "Contact Me",
@@ -22,14 +23,20 @@ export default function Header() {
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-95 border-b-[1px] border-spacing-0">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-5 lg:px-10 bg-[#121212]">
         <Link
           href={"/"}
           onClick={() => isNavbarOpen && setIsNavbarOpen(false)}
-          className=" text-2xl md:text-5xl text-white font-semibold font-serif"
+          className="h-10 flex justify-center items-center text-white font-semibold font-serif"
         >
-          Abhishek
+          <Image
+            src={"/logo.png"}
+            width={180}
+            height={20}
+            alt="logo"
+            className="contain"
+          />
         </Link>
         I
         <div className="mobile-menu block md:hidden">

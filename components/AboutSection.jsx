@@ -6,16 +6,18 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
-    title: "Skills",
+    title: "Major Skills",
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
         <li>Next Js</li>
         <li>React</li>
+        <li>Javascript</li>
         <li>Mongo Db</li>
-        <li>Docker</li>
-        <li>Git</li>
+        <li>Express.js</li>
+        <li>Node.js</li>
         <li>Aws</li>
+        <li>Git</li>
       </ul>
     ),
   },
@@ -24,7 +26,7 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Srm Institute of Science and Technology</li>
+        <li>Srm Institute of Science and Technology (NCR Campus)</li>
         <li>Sant Gyaneshwar Model School</li>
         <li>Pole Star School</li>
       </ul>
@@ -35,7 +37,11 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
+        <li>Version Control with Meta</li>
+        <li>Foundations of Cybersecurity</li>
         <li>AWS Academy Cloud Foundations</li>
+        <li>Introduction to Cybersecurity</li>
+        <li>Artificial Intelligence (AI) with IBM</li>
         <li>AWS Academy Machine Learning Foundations</li>
       </ul>
     ),
@@ -77,7 +83,7 @@ const AboutSection = () => {
               id="skills"
             >
               {" "}
-              Skills{" "}
+              Major Skills{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
