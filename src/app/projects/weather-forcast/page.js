@@ -54,6 +54,7 @@ const EmailSection = () => {
     };
     const response = await fetch(endpoint, options);
     const resData = await response.json();
+    console.log(resData.payload);
     if (response.ok) {
       setWeatherData(resData.payload);
     } else {
@@ -99,7 +100,7 @@ const EmailSection = () => {
       {weatherData !== "" && weatherData !== "-1" ? (
         <section className="lg:px-24 flex  relative px-3 ">
           <table>
-            <caption className="text-white pb-5">{`Weather Forcast of ${weatherData.name}`}</caption>
+            <caption className="text-white my-5 pb-5 text-4xl ">{`Weather Forcast of ${weatherData.name}`}</caption>
             <thead>
               <tr>
                 <th scope="col">Temperature</th>
@@ -108,8 +109,7 @@ const EmailSection = () => {
                 <th scope="col">Temp Max</th>
                 <th scope="col">Temp Min</th>
                 <th scope="col">Weather</th>
-                <th scope="col">Temp Min</th>
-                <th scope="col">Aqi</th>
+                <th scope="col">Wind Speed</th>
               </tr>
             </thead>
             <tbody>
@@ -135,9 +135,8 @@ const EmailSection = () => {
                   {weatherData.main.temp_min}
                   <sup className="superscript">•</sup>C
                 </td>
-                <td data-label="Weather">{weatherData.weather[0].main}</td>
-                <td data-label="Clouds">03/01/2016 - 03/31/2016</td>
-                <td data-label="Aqi">03/01/2016 - 03/31/2016</td>
+                <td data-label="Weather">{weatherData.weather[0].description}</td>
+                <td data-label="Clouds">{weatherData.wind.speed}</td>
               </tr>
             </tbody>
           </table>
